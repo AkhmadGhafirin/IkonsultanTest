@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
-    private List<Post> dataList;
+    private List<Post> dataList =  new ArrayList<>();
     private LayoutInflater inflater;
     private ItemClickListener clickListener;
 
@@ -37,7 +37,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Post item = dataList.get(position);
         holder.tvTitle.setText(item.getTitle());
-        holder.tvTitle.setText(item.getId());
+        holder.tvId.setText(String.valueOf(item.getId()));
     }
 
     @Override
